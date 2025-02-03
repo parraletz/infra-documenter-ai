@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "infra-gendocs-ai"
+version = "0.1.0"
+description = "Script to generate documentation via Gen AI, using langchain"
+authors = ["Alex Parra <parraletz@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^1.61.0"
+langchain-community = "^0.3.16"
+pygithub = "^2.5.0"
+github3-py = "^4.0.1"
+langchain-openai = "^0.3.3"
+python-dotenv = "^1.0.1"
+diagrams = "^0.24.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.4"
+pyright = "^1.1.393"
+bpython = "^0.25"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
