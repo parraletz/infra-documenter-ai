@@ -7,6 +7,7 @@ import glob
 import logging
 import os
 import re
+import sys
 
 from dotenv import load_dotenv
 from github import Github
@@ -129,4 +130,5 @@ def process_repository(base_directory):
             geneate_documentation(infra_folder, infrastructure_code)
 
 
-process_repository("/Users/aparra/workspaces/occ/ra-iac")
+if __name__ == "__main__":
+    process_repository(sys.argv[1])
