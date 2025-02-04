@@ -177,3 +177,4 @@ pyrightconfig.json
 
 output/
 *.png
+.DS_Store
