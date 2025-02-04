@@ -14,6 +14,9 @@ from langchain_openai import ChatOpenAI
 
 from promtps import human_prompt, system_prompt
 
+# from langchain_openai import ChatOpenAI
+
+
 load_dotenv()
 
 
@@ -31,6 +34,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 logger.info("Loading OpenAI")
 llm = ChatOpenAI(model="gpt-4o")
+# llm = ChatOllama(model="llama3:latest", base_url="http://localhost:11434")
 
 
 def remove_code_blocks(text, block_code):
@@ -94,6 +98,8 @@ def geneate_documentation(infra_folder: str, infrastructure_code: str):
 
     readme_content = remove_code_blocks(readme_content, "markdown")
     diagram_code = remove_code_blocks(diagram_code, "python")
+
+    readme_content.replace("# generate_diagram.py", "")
 
     with open(f"output/{infra_folder}/README.md", "w", encoding="utf-8") as f:
         f.write(readme_content.strip())
