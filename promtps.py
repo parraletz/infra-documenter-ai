@@ -571,7 +571,7 @@ def system_prompt(infrastructure_code: str, infra_folder: str) -> SystemMessage:
 
         urlretrieve(github_actions_url, github_actions_icon)
 
-        with Diagram("Pandape Gateway Infrastructure", show=False, filename="architecture"):
+        with Diagram("Gateway Infrastructure", show=False, filename="architecture"):
             vcs = Custom("GitHub Actions", icon_path="github_actions_icon.png")
 
             with Cluster("VPC"):
